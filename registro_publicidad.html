@@ -1,0 +1,702 @@
+<!doctype html>
+<html lang="en" data-bs-theme="blue-theme">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Instituto Politécnico Nacional</title>
+  <!--favicon-->
+  <link rel="icon" href="assets/images/IPN-Logo.png" type="image/png">
+  <!-- loader-->
+  <link href="assets/css/pace.min.css" rel="stylesheet">
+  <script src="assets/js/pace.min.js"></script>
+
+  <!--plugins-->
+  <link href="assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="assets/plugins/metismenu/metisMenu.min.css">
+  <link href="assets/plugins/fancy-file-uploader/fancy_fileupload.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="assets/plugins/metismenu/mm-vertical.css">
+  <link rel="stylesheet" type="text/css" href="assets/plugins/simplebar/css/simplebar.css">
+  <!--bootstrap css-->
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined" rel="stylesheet">
+  <!--main css-->
+  <link href="assets/css/bootstrap-extended.css" rel="stylesheet">
+  <link href="sass/main.css" rel="stylesheet">
+  <link href="sass/dark-theme.css" rel="stylesheet">
+  <link href="sass/blue-theme.css" rel="stylesheet">
+  <link href="sass/semi-dark.css" rel="stylesheet">
+  <link href="sass/bordered-theme.css" rel="stylesheet">
+  <link href="sass/responsive.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!--start header-->
+  <header class="top-header">
+    <nav class="navbar navbar-expand align-items-center gap-4">
+      <div class="btn-toggle">
+        <a href="javascript:;"><i class="material-icons-outlined">menu</i></a>
+      </div>
+      <div class="search-bar flex-grow-1">
+        <div class="position-relative">
+          <input class="form-control rounded-5 px-5 search-control d-lg-block d-none" type="text" placeholder="Buscar">
+          <span class="material-icons-outlined position-absolute d-lg-block d-none ms-3 translate-middle-y start-0 top-50">search</span>
+          <span class="material-icons-outlined position-absolute me-3 translate-middle-y end-0 top-50 search-close">close</span>
+          <!-- Modificamos el popup para que nunca se muestre -->
+          <div class="search-popup p-3" style="display: none !important; visibility: hidden !important; opacity: 0 !important; pointer-events: none !important;">
+            <div class="card rounded-4 overflow-hidden">
+              <div class="card-header d-lg-none">
+                <div class="position-relative">
+                  <input class="form-control rounded-5 px-5 mobile-search-control" type="text" placeholder="Buscar">
+                  <span class="material-icons-outlined position-absolute ms-3 translate-middle-y start-0 top-50">search</span>
+                  <span class="material-icons-outlined position-absolute me-3 translate-middle-y end-0 top-50 mobile-search-close">close</span>
+                </div>
+              </div>
+              <div class="card-body search-content">
+                <hr>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ul class="navbar-nav gap-1 nav-right-links align-items-center">
+        <li class="nav-item d-lg-none mobile-search-btn">
+          <a class="nav-link" href="javascript:;"><i class="material-icons-outlined">Buscar</i></a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative" data-bs-auto-close="outside"
+            data-bs-toggle="dropdown" href="javascript:;"><i class="material-icons-outlined">notifications</i>
+            <span class="badge-notify">5</span>
+          </a>
+          <div class="dropdown-menu dropdown-notify dropdown-menu-end shadow">
+            <div class="px-3 py-1 d-flex align-items-center justify-content-between border-bottom">
+              <h5 class="notiy-title mb-0">Notificaciones</h5>
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle dropdown-toggle-nocaret option" type="button"
+                  data-bs-toggle="dropdown" aria-expanded="false">
+                  <span class="material-icons-outlined">
+                    more_vert
+                  </span>
+                </button>
+                <div class="dropdown-menu dropdown-option dropdown-menu-end shadow">
+                  <div><a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"><i
+                        class="material-icons-outlined fs-6">inventory_2</i>Archivar todo</a></div>
+                  <div><a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"><i
+                        class="material-icons-outlined fs-6">done_all</i>Marcar como leido</a></div>
+                  <div><a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"><i
+                        class="material-icons-outlined fs-6">mic_off</i>Descartar Notificaciones</a></div>
+                  <div></div>
+                  <div>
+                    <hr class="dropdown-divider">
+                  </div>
+                  <div><a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"><i
+                        class="material-icons-outlined fs-6">leaderboard</i>Reportes</a></div>
+                </div>
+              </div>
+            </div>
+            <div class="notify-list">
+              <div>
+                <a class="dropdown-item border-bottom py-2" href="javascript:;">
+                  <div class="d-flex align-items-center gap-3">
+                    <div class="">
+                      <img src="assets/images/avatars/02.png" class="rounded-circle" width="45" height="45" alt="">
+                    </div>
+                    <div class="">
+                      <h5 class="notify-title">Compra Realizada - Gabriel</h5>
+                      <p class="mb-0 notify-desc">Gabriel compro sudadera IPN</p>
+                      <p class="mb-0 notify-time">Hoy</p>
+                    </div>
+                    <div class="notify-close position-absolute end-0 me-3">
+                      <i class="material-icons-outlined fs-6">close</i>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div>
+                <a class="dropdown-item border-bottom py-2" href="javascript:;">
+                  <div class="d-flex align-items-center gap-3">
+                    <div class="user-wrapper bg-primary text-primary bg-opacity-10">
+                      <span>RS</span>
+                    </div>
+                    <div class="">
+                      <h5 class="notify-title">Nueva cuenta creada</h5>
+                      <p class="mb-0 notify-desc">Usuario nuevo registrado</p>
+                      <p class="mb-0 notify-time">Ayer</p>
+                    </div>
+                    <div class="notify-close position-absolute end-0 me-3">
+                      <i class="material-icons-outlined fs-6">close</i>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div>
+                <a class="dropdown-item border-bottom py-2" href="javascript:;">
+                  <div class="d-flex align-items-center gap-3">
+                    <div class="">
+                      <img src="assets/images/apps/13.png" class="rounded-circle" width="45" height="45" alt="">
+                    </div>
+                    <div class="">
+                      <h5 class="notify-title">Pago Recibido</h5>
+                      <p class="mb-0 notify-desc">Nuevo pago recibido correctamente</p>
+                      <p class="mb-0 notify-time">Hace 2 dias</p>
+                    </div>
+                    <div class="notify-close position-absolute end-0 me-3">
+                      <i class="material-icons-outlined fs-6">close</i>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div>
+                <a class="dropdown-item border-bottom py-2" href="javascript:;">
+                  <div class="d-flex align-items-center gap-3">
+                    <div class="">
+                      <img src="assets/images/apps/14.png" class="rounded-circle" width="45" height="45" alt="">
+                    </div>
+                    <div class="">
+                      <h5 class="notify-title">Nueva Orden Recibida</h5>
+                      <p class="mb-0 notify-desc">Neva orden recibida desde Toluca</p>
+                      <p class="mb-0 notify-time">Hace 2 dias</p>
+                    </div>
+                    <div class="notify-close position-absolute end-0 me-3">
+                      <i class="material-icons-outlined fs-6">close</i>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <div>
+                <a class="dropdown-item py-2" href="javascript:;">
+                  <div class="d-flex align-items-center gap-3">
+                    <div class="user-wrapper bg-danger text-danger bg-opacity-10">
+                      <span>PK</span>
+                    </div>
+                    <div class="">
+                      <h5 class="notify-title">Nueva cuenta creada</h5>
+                      <p class="mb-0 notify-desc">Usuario nuevo registrado</p>
+                      <p class="mb-0 notify-time">Hace 5 dias</p>
+                    </div>
+                    <div class="notify-close position-absolute end-0 me-3">
+                      <i class="material-icons-outlined fs-6">close</i>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a href="javascrpt:;" class="dropdown-toggle dropdown-toggle-nocaret" data-bs-toggle="dropdown">
+            <img src="assets/images/avatars/06.png" class="rounded-circle p-1 border" width="45" height="45" alt="">
+          </a>
+          <div class="dropdown-menu dropdown-user dropdown-menu-end shadow">
+            <a class="dropdown-item  gap-2 py-2" href="javascript:;">
+              <div class="text-center">
+                <img src="assets/images/avatars/06.png" class="rounded-circle p-1 shadow mb-3" width="90" height="90"
+                  alt="">
+                <h5 class="user-name mb-0 fw-bold">Jonathan Valle</h5>
+              </div>
+            </a>
+            <hr class="dropdown-divider">
+            <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"><i
+                class="material-icons-outlined">person_outline</i>Perfil</a>
+            <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"><i
+                class="material-icons-outlined">local_bar</i>Configuración</a>
+            <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"><i
+                class="material-icons-outlined">dashboard</i>Panel Principal</a>
+            <hr class="dropdown-divider">
+            <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"><i
+                class="material-icons-outlined">power_settings_new</i>Cerrar Sesión</a>
+          </div>
+        </li>
+      </ul>
+
+    </nav>
+  </header>
+  <!--end top header-->
+
+
+  <!--start sidebar-->
+  <aside class="sidebar-wrapper" data-simplebar="true">
+    <div class="sidebar-header">
+      <div class="logo-icon">
+        <img src="assets/images/IPN-Logo-icon.png" class="logo-img" alt="">
+      </div>
+      <div class="logo-name flex-grow-1">
+        <h6 class="mb-0">Instituto Politécnico Nacional</h6>
+      </div>
+      <div class="sidebar-close">
+        <span class="material-icons-outlined">close</span>
+      </div>
+    </div>
+    <div class="sidebar-nav">
+
+         <!--navigation-->
+         <ul class="metismenu" id="sidenav">
+          <li>
+            <a href="index.html" class="has-arrow">
+              <div class="parent-icon"><i class="material-icons-outlined">home</i>
+              </div>
+              <div class="menu-title">Panel Principal</div>
+            </a>
+          </li>
+  
+          <li class="menu-label">Registros</li>
+          <li>
+            <a href="javascript:;" class="has-arrow">
+              <div class="parent-icon"><i class="material-icons-outlined">home</i>
+              </div>
+              <div class="menu-title">Registro(s)</div>
+            </a>
+            <ul>
+              <!-- <li><a href="index2.html"><i class="material-icons-outlined">arrow_right</i>Tienda Oficial</a> -->
+              <li><a href="registro_producto.html"><i class="material-icons-outlined">arrow_right</i>Productos</a>
+              <!-- <li><a href="#"><i class="material-icons-outlined">arrow_right</i>Categorias</a> -->
+              </li>
+            </ul>
+          </li>
+  
+          <!-- <li class="menu-label">Usuarios</li>
+          <li>
+            <a href="javascript:;" class="has-arrow">
+              <div class="parent-icon"><i class="material-icons-outlined">home</i>
+              </div>
+              <div class="menu-title">Usuarios</div>
+            </a>
+            <ul>
+              <li><a href="#"><i class="material-icons-outlined">arrow_right</i>Registrar</a>
+              <li><a href="#"><i class="material-icons-outlined">arrow_right</i>Modificar</a>
+              <li><a href="#"><i class="material-icons-outlined">arrow_right</i>Eliminar</a>
+                 <li><a href="index2.html"><i class="material-icons-outlined">arrow_right</i>Tienda Oficial</a> -->
+              <!-- </li>
+            </ul>
+          </li>  -->
+  
+          <li class="menu-label">Ofertas y Publicidad</li>
+          <li>
+            <a href="javascript:;" class="has-arrow">
+              <div class="parent-icon"><i class="material-icons-outlined">home</i>
+              </div>
+              <div class="menu-title">Ofertas y Publicidad</div>
+            </a>
+            <ul>
+              <!-- <li><a href="index2.html"><i class="material-icons-outlined">arrow_right</i>Tienda Oficial</a> -->
+              <li><a href="registro_descuentos.html"><i class="material-icons-outlined">arrow_right</i>Descuentos</a>
+              <li><a href="registro_publicidad.html"><i class="material-icons-outlined">arrow_right</i>Publicidad</a>
+              </li>
+            </ul>
+          </li>
+  
+          <li class="menu-label">Consultas</li>
+          <li>
+            <a class="has-arrow" href="javascript:;">
+              <div class="parent-icon"><i class="material-icons-outlined">home</i>
+              </div>
+              <div class="menu-title">Consultas</div>
+            </a>
+            <ul>
+              <!-- <li><a class="has-arrow" href="javascript:;"><i
+                    class="material-icons-outlined">arrow_right</i>Reporte-Descuentos</a>
+                <ul>
+                  <li><a href="#" target="_blank"><i class="material-icons-outlined">arrow_right</i>Registro (%)</a></li>
+                  <li><a href="#" target="_blank"><i class="material-icons-outlined">arrow_right</i>Imagen (s)</a></li>
+                </ul>
+              </li> -->
+              <li><a class="has-arrow" href="javascript:;"><i
+                    class="material-icons-outlined">arrow_right</i>Reporte-Ventas</a>
+                <ul>
+                  <li><a href="reporte_ventas_generales.html" target="_blank"><i
+                        class="material-icons-outlined">arrow_right</i>Generales</a></li>
+                </ul>
+              </li>
+              <!-- <li><a class="has-arrow" href="javascript:;"><i
+                    class="material-icons-outlined">arrow_right</i>Reporte-Usuarios</a>
+                <ul>
+                  <li><a href="#" target="_blank"><i class="material-icons-outlined">arrow_right</i>Imagen (s)</a></li>
+                </ul>
+              </li>
+              <li><a class="has-arrow" href="javascript:;"><i
+                    class="material-icons-outlined">arrow_right</i>Reporte-Envios</a>
+                <ul>
+                  <li><a href="#" target="_blank"><i class="material-icons-outlined">arrow_right</i>Imagen (s)</a></li>
+                </ul>
+              </li>
+              <li><a class="has-arrow" href="javascript:;"><i
+                    class="material-icons-outlined">arrow_right</i>Reporte-Devoluciones</a>
+                <ul>
+                  <li><a href="#" target="_blank"><i class="material-icons-outlined">arrow_right</i>Imagen (s)</a></li>
+                </ul>
+              </li>
+              <li><a class="has-arrow" href="javascript:;"><i
+                    class="material-icons-outlined">arrow_right</i>Reporte-Productos</a>
+                <ul>
+                  <li><a href="#" target="_blank"><i class="material-icons-outlined">arrow_right</i>Imagen (s)</a></li>
+                </ul>
+              </li>
+              <li><a class="has-arrow" href="javascript:;"><i class="material-icons-outlined">arrow_right</i>Productos</a>
+                <ul>
+                  <li><a href="#" target="_blank"><i class="material-icons-outlined">arrow_right</i>Imagen (s)</a></li>
+                </ul>
+              </li>
+              <li><a class="has-arrow" href="javascript:;"><i
+                    class="material-icons-outlined">arrow_right</i>Descuentos</a>
+                <ul>
+                  <li><a href="#" target="_blank"><i class="material-icons-outlined">arrow_right</i>Imagen (s)</a></li>
+                </ul>
+              </li>
+              <li><a class="has-arrow" href="javascript:;"><i class="material-icons-outlined">arrow_right</i>Usuarios</a>
+                <ul>
+                  <li><a href="#" target="_blank"><i class="material-icons-outlined">arrow_right</i>Imagen (s)</a></li>
+                </ul>
+              </li>
+              <li><a class="has-arrow" href="javascript:;"><i class="material-icons-outlined">arrow_right</i>Reseñas</a>
+                <ul>
+                  <li><a href="#" target="_blank"><i class="material-icons-outlined">arrow_right</i>Imagen (s)</a></li>
+                </ul>
+              </li>
+              <li><a class="has-arrow" href="javascript:;"><i
+                    class="material-icons-outlined">arrow_right</i>Descuentos</a>
+                <ul>
+                  <li><a href="#" target="_blank"><i class="material-icons-outlined">arrow_right</i>Imagen (s)</a></li>
+                </ul>
+              </li>
+              <li><a class="has-arrow" href="javascript:;"><i
+                    class="material-icons-outlined">arrow_right</i>Publicidad</a>
+                <ul>
+                  <li><a href="#" target="_blank"><i class="material-icons-outlined">arrow_right</i>Imagen (s)</a></li>
+                </ul>
+              </li>
+            </ul> -->
+          </li>
+  
+          <!-- <li class="menu-label">Eliminar</li>
+          <li>
+            <a class="has-arrow" href="javascript:;">
+              <div class="parent-icon"><i class="material-icons-outlined">home</i>
+              </div>
+              <div class="menu-title">Eliminar</div>
+            </a>
+            <ul>
+              <li><a class="has-arrow" href="javascript:;"><i
+                    class="material-icons-outlined">arrow_right</i>Categorias</a>
+                <ul>
+                  <li><a href="#" target="_blank"><i class="material-icons-outlined">arrow_right</i>Subcategorias</a></li>
+                </ul>
+              </li>
+              <li><a class="has-arrow" href="javascript:;"><i class="material-icons-outlined">arrow_right</i>Productos</a>
+                <ul>
+                </ul>
+              </li>
+            </ul>
+          </li> -->
+  
+  
+          <!--end navigation-->
+    </div>
+  </aside>
+  <!--end sidebar-->
+
+
+  <!--start main wrapper-->
+  <main class="main-wrapper">
+    <div class="main-content">
+      <!--breadcrumb-->
+      <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+        <div class="breadcrumb-title pe-3">Ofertas y Publicidad</div>
+        <div class="ps-3">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0 p-0">
+              <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">Publicidad</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+      <!--end breadcrumb-->
+      <div class="row">
+        <div class="col-12 col-lg-8">
+          <div class="card">
+            <div class="card-body">
+              <div class="mb-4">
+                <h5 class="mb-3">Nombre de Publicidad</h5>
+                <input type="text" class="form-control" placeholder="Escribe el Nombre del producto aquí...">
+              </div>
+              <div class="mb-4">
+                <h5 class="mb-3">Descripción del Publicidad</h5>
+                <textarea class="form-control" cols="4" rows="6"
+                  placeholder="Escribe la descripción aquí..."></textarea>
+              </div>
+              <div class="mb-4">
+                <h5 class="mb-3">Imagen de Publicidad</h5>
+                <input id="fancy-file-upload" type="file" name="files" accept=".jpg, .png, image/jpeg, image/png"
+                  multiple>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <div class="d-flex align-items-center gap-3">
+                <button type="button" class="btn btn-outline-danger flex-fill"><i
+                    class="bi bi-x-circle me-2"></i>Descartar</button>
+                <button type="button" class="btn btn-outline-primary flex-fill"><i
+                    class="bi bi-send me-2"></i>Publicar</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div><!--end row-->
+    </div>
+  </main>
+  <!--end main wrapper-->
+
+
+  <!--start overlay-->
+  <div class="overlay btn-toggle"></div>
+  <!--end overlay-->
+
+  <!--start footer-->
+  <footer class="page-footer">
+    <p class="mb-0">Copyright © 2025. Todos los Derechos Reservados.</p>
+  </footer>
+  <!--top footer-->
+
+  <!--start cart-->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCart">
+    <div class="offcanvas-header border-bottom h-70">
+      <h5 class="mb-0" id="offcanvasRightLabel">8 New Orders</h5>
+      <a href="javascript:;" class="primaery-menu-close" data-bs-dismiss="offcanvas">
+        <i class="material-icons-outlined">close</i>
+      </a>
+    </div>
+    <div class="offcanvas-body p-0">
+      <div class="order-list">
+        <div class="order-item d-flex align-items-center gap-3 p-3 border-bottom">
+          <div class="order-img">
+            <img src="assets/images/orders/01.png" class="img-fluid rounded-3" width="75" alt="">
+          </div>
+          <div class="order-info flex-grow-1">
+            <h5 class="mb-1 order-title">White Men Shoes</h5>
+            <p class="mb-0 order-price">$289</p>
+          </div>
+          <div class="d-flex">
+            <a class="order-delete"><span class="material-icons-outlined">delete</span></a>
+            <a class="order-delete"><span class="material-icons-outlined">visibility</span></a>
+          </div>
+        </div>
+
+        <div class="order-item d-flex align-items-center gap-3 p-3 border-bottom">
+          <div class="order-img">
+            <img src="assets/images/orders/02.png" class="img-fluid rounded-3" width="75" alt="">
+          </div>
+          <div class="order-info flex-grow-1">
+            <h5 class="mb-1 order-title">Red Airpods</h5>
+            <p class="mb-0 order-price">$149</p>
+          </div>
+          <div class="d-flex">
+            <a class="order-delete"><span class="material-icons-outlined">delete</span></a>
+            <a class="order-delete"><span class="material-icons-outlined">visibility</span></a>
+          </div>
+        </div>
+
+        <div class="order-item d-flex align-items-center gap-3 p-3 border-bottom">
+          <div class="order-img">
+            <img src="assets/images/orders/03.png" class="img-fluid rounded-3" width="75" alt="">
+          </div>
+          <div class="order-info flex-grow-1">
+            <h5 class="mb-1 order-title">Men Polo Tshirt</h5>
+            <p class="mb-0 order-price">$139</p>
+          </div>
+          <div class="d-flex">
+            <a class="order-delete"><span class="material-icons-outlined">delete</span></a>
+            <a class="order-delete"><span class="material-icons-outlined">visibility</span></a>
+          </div>
+        </div>
+
+        <div class="order-item d-flex align-items-center gap-3 p-3 border-bottom">
+          <div class="order-img">
+            <img src="assets/images/orders/04.png" class="img-fluid rounded-3" width="75" alt="">
+          </div>
+          <div class="order-info flex-grow-1">
+            <h5 class="mb-1 order-title">Blue Jeans Casual</h5>
+            <p class="mb-0 order-price">$485</p>
+          </div>
+          <div class="d-flex">
+            <a class="order-delete"><span class="material-icons-outlined">delete</span></a>
+            <a class="order-delete"><span class="material-icons-outlined">visibility</span></a>
+          </div>
+        </div>
+
+        <div class="order-item d-flex align-items-center gap-3 p-3 border-bottom">
+          <div class="order-img">
+            <img src="assets/images/orders/05.png" class="img-fluid rounded-3" width="75" alt="">
+          </div>
+          <div class="order-info flex-grow-1">
+            <h5 class="mb-1 order-title">Fancy Shirts</h5>
+            <p class="mb-0 order-price">$758</p>
+          </div>
+          <div class="d-flex">
+            <a class="order-delete"><span class="material-icons-outlined">delete</span></a>
+            <a class="order-delete"><span class="material-icons-outlined">visibility</span></a>
+          </div>
+        </div>
+
+        <div class="order-item d-flex align-items-center gap-3 p-3 border-bottom">
+          <div class="order-img">
+            <img src="assets/images/orders/06.png" class="img-fluid rounded-3" width="75" alt="">
+          </div>
+          <div class="order-info flex-grow-1">
+            <h5 class="mb-1 order-title">Home Sofa Set </h5>
+            <p class="mb-0 order-price">$546</p>
+          </div>
+          <div class="d-flex">
+            <a class="order-delete"><span class="material-icons-outlined">delete</span></a>
+            <a class="order-delete"><span class="material-icons-outlined">visibility</span></a>
+          </div>
+        </div>
+
+        <div class="order-item d-flex align-items-center gap-3 p-3 border-bottom">
+          <div class="order-img">
+            <img src="assets/images/orders/07.png" class="img-fluid rounded-3" width="75" alt="">
+          </div>
+          <div class="order-info flex-grow-1">
+            <h5 class="mb-1 order-title">Black iPhone</h5>
+            <p class="mb-0 order-price">$1049</p>
+          </div>
+          <div class="d-flex">
+            <a class="order-delete"><span class="material-icons-outlined">delete</span></a>
+            <a class="order-delete"><span class="material-icons-outlined">visibility</span></a>
+          </div>
+        </div>
+
+        <div class="order-item d-flex align-items-center gap-3 p-3 border-bottom">
+          <div class="order-img">
+            <img src="assets/images/orders/08.png" class="img-fluid rounded-3" width="75" alt="">
+          </div>
+          <div class="order-info flex-grow-1">
+            <h5 class="mb-1 order-title">Goldan Watch</h5>
+            <p class="mb-0 order-price">$689</p>
+          </div>
+          <div class="d-flex">
+            <a class="order-delete"><span class="material-icons-outlined">delete</span></a>
+            <a class="order-delete"><span class="material-icons-outlined">visibility</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="offcanvas-footer h-70 p-3 border-top">
+      <div class="d-grid">
+        <button type="button" class="btn btn-grd btn-grd-primary" data-bs-dismiss="offcanvas">View Products</button>
+      </div>
+    </div>
+  </div>
+  <!--end cart-->
+
+
+  <!--start switcher-->
+  <button class="btn btn-grd btn-grd-primary position-fixed bottom-0 end-0 m-3 d-flex align-items-center gap-2"
+    type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop">
+    <i class="material-icons-outlined">tune</i>Customize
+  </button>
+
+  <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="staticBackdrop">
+    <div class="offcanvas-header border-bottom h-70">
+      <div class="">
+        <h5 class="mb-0">Theme Customizer</h5>
+        <p class="mb-0">Customize your theme</p>
+      </div>
+      <a href="javascript:;" class="primaery-menu-close" data-bs-dismiss="offcanvas">
+        <i class="material-icons-outlined">close</i>
+      </a>
+    </div>
+    <div class="offcanvas-body">
+      <div>
+        <p>Theme variation</p>
+
+        <div class="row g-3">
+          <div class="col-12 col-xl-6">
+            <input type="radio" class="btn-check" name="theme-options" id="BlueTheme" checked>
+            <label
+              class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4"
+              for="BlueTheme">
+              <span class="material-icons-outlined">contactless</span>
+              <span>Blue</span>
+            </label>
+          </div>
+          <div class="col-12 col-xl-6">
+            <input type="radio" class="btn-check" name="theme-options" id="LightTheme">
+            <label
+              class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4"
+              for="LightTheme">
+              <span class="material-icons-outlined">light_mode</span>
+              <span>Light</span>
+            </label>
+          </div>
+          <div class="col-12 col-xl-6">
+            <input type="radio" class="btn-check" name="theme-options" id="DarkTheme">
+            <label
+              class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4"
+              for="DarkTheme">
+              <span class="material-icons-outlined">dark_mode</span>
+              <span>Dark</span>
+            </label>
+          </div>
+          <div class="col-12 col-xl-6">
+            <input type="radio" class="btn-check" name="theme-options" id="SemiDarkTheme">
+            <label
+              class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4"
+              for="SemiDarkTheme">
+              <span class="material-icons-outlined">contrast</span>
+              <span>Semi Dark</span>
+            </label>
+          </div>
+          <div class="col-12 col-xl-6">
+            <input type="radio" class="btn-check" name="theme-options" id="BoderedTheme">
+            <label
+              class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4"
+              for="BoderedTheme">
+              <span class="material-icons-outlined">border_style</span>
+              <span>Bordered</span>
+            </label>
+          </div>
+        </div><!--end row-->
+
+      </div>
+    </div>
+  </div>
+  <!--start switcher-->
+
+  <!--bootstrap js-->
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+  <!--plugins-->
+  <script src="assets/js/jquery.min.js"></script>
+  <!--plugins-->
+  <script src="assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
+  <script src="assets/plugins/metismenu/metisMenu.min.js"></script>
+  <script src="assets/plugins/fancy-file-uploader/jquery.ui.widget.js"></script>
+  <script src="assets/plugins/fancy-file-uploader/jquery.fileupload.js"></script>
+  <script src="assets/plugins/fancy-file-uploader/jquery.iframe-transport.js"></script>
+  <script src="assets/plugins/fancy-file-uploader/jquery.fancy-fileupload.js"></script>
+  <script>
+    $('#fancy-file-upload').FancyFileUpload({
+      params: {
+        action: 'fileuploader'
+      },
+      maxfilesize: 1000000
+    });
+  </script>
+  <script src="assets/plugins/simplebar/js/simplebar.min.js"></script>
+  <script src="assets/js/main.js"></script>
+
+
+</body>
+
+</html>
