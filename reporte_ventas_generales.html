@@ -43,30 +43,19 @@
       </div>
       <div class="search-bar flex-grow-1">
         <div class="position-relative">
-          <input class="form-control rounded-5 px-5 search-control d-lg-block d-none" type="text" placeholder="Buscar">
-          <span class="material-icons-outlined position-absolute d-lg-block d-none ms-3 translate-middle-y start-0 top-50">search</span>
-          <span class="material-icons-outlined position-absolute me-3 translate-middle-y end-0 top-50 search-close">close</span>
-          <!-- Modificamos el popup para que nunca se muestre -->
-          <div class="search-popup p-3" style="display: none !important; visibility: hidden !important; opacity: 0 !important; pointer-events: none !important;">
-            <div class="card rounded-4 overflow-hidden">
-              <div class="card-header d-lg-none">
-                <div class="position-relative">
-                  <input class="form-control rounded-5 px-5 mobile-search-control" type="text" placeholder="Buscar">
-                  <span class="material-icons-outlined position-absolute ms-3 translate-middle-y start-0 top-50">search</span>
-                  <span class="material-icons-outlined position-absolute me-3 translate-middle-y end-0 top-50 mobile-search-close">close</span>
-                </div>
-              </div>
-              <div class="card-body search-content">
-                <hr>
-              </div>
-            </div>
-          </div>
+          <input class="form-control rounded-5 px-5 search-control" type="text" placeholder="Buscar">
+          <span class="material-icons-outlined position-absolute search-icon start-0">search</span>
+          <span class="material-icons-outlined position-absolute search-close end-0">close</span>
         </div>
       </div>
+      <div class="search-popup p-3">
+
+        <div class="card-body search-content">
+        </div>
+      </div>
+      </div>
+      </div>
       <ul class="navbar-nav gap-1 nav-right-links align-items-center">
-        <li class="nav-item d-lg-none mobile-search-btn">
-          <a class="nav-link" href="javascript:;"><i class="material-icons-outlined">Buscar</i></a>
-        </li>
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative" data-bs-auto-close="outside"
@@ -235,32 +224,32 @@
     </div>
     <div class="sidebar-nav">
 
-            <!--navigation-->
-            <ul class="metismenu" id="sidenav">
-              <li>
-                <a href="index.html" class="has-arrow">
-                  <div class="parent-icon"><i class="material-icons-outlined">home</i>
-                  </div>
-                  <div class="menu-title">Panel Principal</div>
-                </a>
-              </li>
-      
-              <li class="menu-label">Registros</li>
-              <li>
-                <a href="javascript:;" class="has-arrow">
-                  <div class="parent-icon"><i class="material-icons-outlined">home</i>
-                  </div>
-                  <div class="menu-title">Registro(s)</div>
-                </a>
-                <ul>
-                  <!-- <li><a href="index2.html"><i class="material-icons-outlined">arrow_right</i>Tienda Oficial</a> -->
-                  <li><a href="registro_producto.html"><i class="material-icons-outlined">arrow_right</i>Productos</a>
-                  <!-- <li><a href="#"><i class="material-icons-outlined">arrow_right</i>Categorias</a> -->
-                  </li>
-                </ul>
-              </li>
-      
-              <!-- <li class="menu-label">Usuarios</li>
+      <!--navigation-->
+      <ul class="metismenu" id="sidenav">
+        <li>
+          <a href="index.html" class="has-arrow">
+            <div class="parent-icon"><i class="material-icons-outlined">home</i>
+            </div>
+            <div class="menu-title">Panel Principal</div>
+          </a>
+        </li>
+
+        <li class="menu-label">Registros</li>
+        <li>
+          <a href="javascript:;" class="has-arrow">
+            <div class="parent-icon"><i class="material-icons-outlined">home</i>
+            </div>
+            <div class="menu-title">Registro(s)</div>
+          </a>
+          <ul>
+            <!-- <li><a href="index2.html"><i class="material-icons-outlined">arrow_right</i>Tienda Oficial</a> -->
+            <li><a href="registro_producto.html"><i class="material-icons-outlined">arrow_right</i>Productos</a>
+              <!-- <li><a href="#"><i class="material-icons-outlined">arrow_right</i>Categorias</a> -->
+            </li>
+          </ul>
+        </li>
+
+        <!-- <li class="menu-label">Usuarios</li>
               <li>
                 <a href="javascript:;" class="has-arrow">
                   <div class="parent-icon"><i class="material-icons-outlined">home</i>
@@ -272,48 +261,48 @@
                   <li><a href="#"><i class="material-icons-outlined">arrow_right</i>Modificar</a>
                   <li><a href="#"><i class="material-icons-outlined">arrow_right</i>Eliminar</a>
                      <li><a href="index2.html"><i class="material-icons-outlined">arrow_right</i>Tienda Oficial</a> -->
-                  <!-- </li>
+        <!-- </li>
                 </ul>
               </li>  -->
-      
-              <li class="menu-label">Ofertas y Publicidad</li>
-              <li>
-                <a href="javascript:;" class="has-arrow">
-                  <div class="parent-icon"><i class="material-icons-outlined">home</i>
-                  </div>
-                  <div class="menu-title">Ofertas y Publicidad</div>
-                </a>
-                <ul>
-                  <!-- <li><a href="index2.html"><i class="material-icons-outlined">arrow_right</i>Tienda Oficial</a> -->
-                  <li><a href="registro_descuentos.html"><i class="material-icons-outlined">arrow_right</i>Descuentos</a>
-                  <li><a href="registro_publicidad.html"><i class="material-icons-outlined">arrow_right</i>Publicidad</a>
-                  </li>
-                </ul>
-              </li>
-      
-              <li class="menu-label">Consultas</li>
-              <li>
-                <a class="has-arrow" href="javascript:;">
-                  <div class="parent-icon"><i class="material-icons-outlined">home</i>
-                  </div>
-                  <div class="menu-title">Consultas</div>
-                </a>
-                <ul>
-                  <!-- <li><a class="has-arrow" href="javascript:;"><i
+
+        <li class="menu-label">Ofertas y Publicidad</li>
+        <li>
+          <a href="javascript:;" class="has-arrow">
+            <div class="parent-icon"><i class="material-icons-outlined">home</i>
+            </div>
+            <div class="menu-title">Ofertas y Publicidad</div>
+          </a>
+          <ul>
+            <!-- <li><a href="index2.html"><i class="material-icons-outlined">arrow_right</i>Tienda Oficial</a> -->
+            <li><a href="registro_descuentos.html"><i class="material-icons-outlined">arrow_right</i>Descuentos</a>
+            <li><a href="registro_publicidad.html"><i class="material-icons-outlined">arrow_right</i>Publicidad</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="menu-label">Consultas</li>
+        <li>
+          <a class="has-arrow" href="javascript:;">
+            <div class="parent-icon"><i class="material-icons-outlined">home</i>
+            </div>
+            <div class="menu-title">Consultas</div>
+          </a>
+          <ul>
+            <!-- <li><a class="has-arrow" href="javascript:;"><i
                         class="material-icons-outlined">arrow_right</i>Reporte-Descuentos</a>
                     <ul>
                       <li><a href="#" target="_blank"><i class="material-icons-outlined">arrow_right</i>Registro (%)</a></li>
                       <li><a href="#" target="_blank"><i class="material-icons-outlined">arrow_right</i>Imagen (s)</a></li>
                     </ul>
                   </li> -->
-                  <li><a class="has-arrow" href="javascript:;"><i
-                        class="material-icons-outlined">arrow_right</i>Reporte-Ventas</a>
-                    <ul>
-                      <li><a href="reporte_ventas_generales.html" target="_blank"><i
-                            class="material-icons-outlined">arrow_right</i>Generales</a></li>
-                    </ul>
-                  </li>
-                  <!-- <li><a class="has-arrow" href="javascript:;"><i
+            <li><a class="has-arrow" href="javascript:;"><i
+                  class="material-icons-outlined">arrow_right</i>Reporte-Ventas</a>
+              <ul>
+                <li><a href="reporte_ventas_generales.html" target="_blank"><i
+                      class="material-icons-outlined">arrow_right</i>Generales</a></li>
+              </ul>
+            </li>
+            <!-- <li><a class="has-arrow" href="javascript:;"><i
                         class="material-icons-outlined">arrow_right</i>Reporte-Usuarios</a>
                     <ul>
                       <li><a href="#" target="_blank"><i class="material-icons-outlined">arrow_right</i>Imagen (s)</a></li>
@@ -371,9 +360,9 @@
                     </ul>
                   </li>
                 </ul> -->
-              </li>
-      
-              <!-- <li class="menu-label">Eliminar</li>
+        </li>
+
+        <!-- <li class="menu-label">Eliminar</li>
               <li>
                 <a class="has-arrow" href="javascript:;">
                   <div class="parent-icon"><i class="material-icons-outlined">home</i>
@@ -393,9 +382,9 @@
                   </li>
                 </ul>
               </li> -->
-      
-      
-              <!--end navigation-->
+
+
+        <!--end navigation-->
     </div>
   </aside>
   <!--end sidebar-->
@@ -591,8 +580,7 @@
                 <h2 class="mb-0">$88,367 mil</h2>
               </div>
               <div class="">
-                <p
-                  class="dash-lable d-flex align-items-center gap-1 rounded mb-0 bg-danger text-danger bg-opacity-10">
+                <p class="dash-lable d-flex align-items-center gap-1 rounded mb-0 bg-danger text-danger bg-opacity-10">
                   <span class="material-icons-outlined fs-6">arrow_upward</span>18.6%
                 </p>
               </div>
@@ -663,7 +651,7 @@
   <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="staticBackdrop">
     <div class="offcanvas-header border-bottom h-70">
       <div class="">
-        <h5 class="mb-0">Seleccionar Tema</h5>
+        <h5 class="mb-0">Temas de Ventanas</h5>
         <p class="mb-0">Selecciona el tema de tu agrado</p>
       </div>
       <a href="javascript:;" class="primaery-menu-close" data-bs-dismiss="offcanvas">
@@ -672,7 +660,7 @@
     </div>
     <div class="offcanvas-body">
       <div>
-        <p>Tipos de Tema</p>
+        <p>Temas</p>
 
         <div class="row g-3">
           <div class="col-12 col-xl-6">
@@ -681,7 +669,7 @@
               class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4"
               for="BlueTheme">
               <span class="material-icons-outlined">contactless</span>
-              <span>Blue</span>
+              <span>Azul</span>
             </label>
           </div>
           <div class="col-12 col-xl-6">
@@ -690,7 +678,7 @@
               class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4"
               for="LightTheme">
               <span class="material-icons-outlined">light_mode</span>
-              <span>Light</span>
+              <span>Claro</span>
             </label>
           </div>
           <div class="col-12 col-xl-6">
@@ -699,7 +687,7 @@
               class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4"
               for="DarkTheme">
               <span class="material-icons-outlined">dark_mode</span>
-              <span>Dark</span>
+              <span>Oscuro</span>
             </label>
           </div>
           <div class="col-12 col-xl-6">
@@ -708,7 +696,7 @@
               class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4"
               for="SemiDarkTheme">
               <span class="material-icons-outlined">contrast</span>
-              <span>Semi Dark</span>
+              <span>Semi Oscuro</span>
             </label>
           </div>
           <div class="col-12 col-xl-6">
@@ -717,7 +705,7 @@
               class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4"
               for="BoderedTheme">
               <span class="material-icons-outlined">border_style</span>
-              <span>Bordered</span>
+              <span>Bordes</span>
             </label>
           </div>
         </div><!--end row-->
@@ -727,6 +715,99 @@
   </div>
   <!--start switcher-->
 
+
+  <style>
+    /* Ajuste para la barra de búsqueda */
+    .search-bar {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      word-wrap: break-word;
+      /* Evitar que las palabras largas se corten */
+      overflow: hidden;
+      /* Asegurar que el texto largo no se desborde */
+      width: 100%;
+    }
+
+    .search-bar .position-relative {
+      width: 100%;
+      max-width: 500px;
+      position: relative;
+    }
+
+    .search-bar input {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 30px;
+      padding-left: 40px;
+      /* Espacio para el icono */
+      box-sizing: border-box;
+      /* Incluir padding en el cálculo del ancho */
+      white-space: nowrap;
+      /* Evitar que el texto se divida en varias líneas */
+      overflow: hidden;
+      /* Evitar que el texto desborde */
+      text-overflow: ellipsis;
+      /* Añadir puntos suspensivos cuando el texto sea muy largo */
+    }
+
+    .search-bar .material-icons-outlined {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: gray;
+    }
+
+    .search-bar .search-icon {
+      left: 10px;
+      /* Ajuste del icono a la izquierda */
+    }
+
+    .search-bar .search-close {
+      right: 20px;
+      cursor: pointer;
+      display: none;
+      /* Se oculta hasta que el usuario escriba */
+    }
+
+    /* Asegurar que la barra sea visible en móviles */
+    @media (max-width: 768px) {
+      .search-bar {
+        width: 100%;
+        padding: 0 15px;
+      }
+
+      .search-bar .position-relative {
+        max-width: 100%;
+      }
+
+      .search-bar input {
+        font-size: 14px;
+      }
+    }
+
+    /* Ocultar el popup de búsqueda en móviles */
+    .search-popup {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+    }
+
+    /* Ajustes para el icono de búsqueda en móviles */
+    .mobile-search-btn {
+      display: flex;
+      align-items: center;
+    }
+
+    .mobile-search-btn i {
+      font-size: 20px;
+      cursor: pointer;
+    }
+  </style>
   <!--bootstrap js-->
   <script src="assets/js/bootstrap.bundle.min.js"></script>
 
@@ -756,6 +837,26 @@
   <script src="assets/plugins/simplebar/js/simplebar.min.js"></script>
   <script src="assets/js/main.js"></script>
 
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const searchInput = document.querySelector(".search-control");
+      const mobileSearchToggle = document.getElementById("mobileSearchToggle");
+
+      // Mostrar barra de búsqueda en móviles
+      if (mobileSearchToggle) {
+        mobileSearchToggle.addEventListener("click", function () {
+          searchInput.classList.toggle("d-none");
+        });
+      }
+
+      // Botón de cerrar búsqueda
+      document.querySelectorAll(".search-close, .mobile-search-close").forEach(btn => {
+        btn.addEventListener("click", function () {
+          searchInput.value = "";
+        });
+      });
+    });
+  </script>
 
 </body>
 

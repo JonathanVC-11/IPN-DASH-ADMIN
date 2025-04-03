@@ -41,30 +41,19 @@
       </div>
       <div class="search-bar flex-grow-1">
         <div class="position-relative">
-          <input class="form-control rounded-5 px-5 search-control d-lg-block d-none" type="text" placeholder="Buscar">
-          <span class="material-icons-outlined position-absolute d-lg-block d-none ms-3 translate-middle-y start-0 top-50">search</span>
-          <span class="material-icons-outlined position-absolute me-3 translate-middle-y end-0 top-50 search-close">close</span>
-          <!-- Modificamos el popup para que nunca se muestre -->
-          <div class="search-popup p-3" style="display: none !important; visibility: hidden !important; opacity: 0 !important; pointer-events: none !important;">
-            <div class="card rounded-4 overflow-hidden">
-              <div class="card-header d-lg-none">
-                <div class="position-relative">
-                  <input class="form-control rounded-5 px-5 mobile-search-control" type="text" placeholder="Buscar">
-                  <span class="material-icons-outlined position-absolute ms-3 translate-middle-y start-0 top-50">search</span>
-                  <span class="material-icons-outlined position-absolute me-3 translate-middle-y end-0 top-50 mobile-search-close">close</span>
-                </div>
-              </div>
-              <div class="card-body search-content">
-                <hr>
-              </div>
-            </div>
-          </div>
+          <input class="form-control rounded-5 px-5 search-control" type="text" placeholder="Buscar">
+          <span class="material-icons-outlined position-absolute search-icon start-0">search</span>
+          <span class="material-icons-outlined position-absolute search-close end-0">close</span>
         </div>
       </div>
+      <div class="search-popup p-3">
+
+        <div class="card-body search-content">
+        </div>
+      </div>
+      </div>
+      </div>
       <ul class="navbar-nav gap-1 nav-right-links align-items-center">
-        <li class="nav-item d-lg-none mobile-search-btn">
-          <a class="nav-link" href="javascript:;"><i class="material-icons-outlined">Buscar</i></a>
-        </li>
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative" data-bs-auto-close="outside"
@@ -253,7 +242,7 @@
           <ul>
             <!-- <li><a href="index2.html"><i class="material-icons-outlined">arrow_right</i>Tienda Oficial</a> -->
             <li><a href="registro_producto.html"><i class="material-icons-outlined">arrow_right</i>Productos</a>
-            <!-- <li><a href="#"><i class="material-icons-outlined">arrow_right</i>Categorias</a> -->
+              <!-- <li><a href="#"><i class="material-icons-outlined">arrow_right</i>Categorias</a> -->
             </li>
           </ul>
         </li>
@@ -270,7 +259,7 @@
             <li><a href="#"><i class="material-icons-outlined">arrow_right</i>Modificar</a>
             <li><a href="#"><i class="material-icons-outlined">arrow_right</i>Eliminar</a>
                <li><a href="index2.html"><i class="material-icons-outlined">arrow_right</i>Tienda Oficial</a> -->
-            <!-- </li>
+        <!-- </li>
           </ul>
         </li>  -->
 
@@ -676,7 +665,7 @@
               </div>
             </div>
           </div>
-          
+
         </div>
       </div>
 
@@ -794,82 +783,190 @@
   <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-  
+
   <style>
     .gmaps {
       height: 400px;
       width: 100%;
       position: relative;
-      z-index: 1; /* Ensure map has a proper z-index */
+      z-index: 1;
+      /* Ensure map has a proper z-index */
     }
-    
+
     /* Add this to ensure the map container behaves properly */
     .map-container {
       position: relative;
       margin-bottom: 20px;
     }
-    
   </style>
 
-   <!-- Leaflet JS -->
-   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-   integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
- 
- <!-- Map initialization script -->
- <script>
-   document.addEventListener('DOMContentLoaded', function () {
-     // Initialize the map centered on Mexico
-     var map = L.map('style-map').setView([23.6345, -102.5528], 5);
+  <style>
+/* Ajuste para la barra de búsqueda */
+.search-bar {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  word-wrap: break-word; /* Evitar que las palabras largas se corten */
+  overflow: hidden; /* Asegurar que el texto largo no se desborde */
+  width: 100%;
+}
 
-     // Add OpenStreetMap tiles
-     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-     }).addTo(map);
+.search-bar .position-relative {
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+}
 
-     // Add markers for major cities with sales data
-     var cities = [
-       { name: 'Ciudad de México', coords: [19.4326, -99.1332], sales: 15420 },
-       { name: 'Guadalajara', coords: [20.6597, -103.3496], sales: 8750 },
-       { name: 'Monterrey', coords: [25.6866, -100.3161], sales: 9320 },
-       { name: 'Puebla', coords: [19.0414, -98.2063], sales: 5680 },
-       { name: 'Tijuana', coords: [32.5149, -117.0382], sales: 4250 },
-       { name: 'Cancún', coords: [21.1619, -86.8515], sales: 7890 }
-     ];
+.search-bar input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 30px;
+  padding-left: 40px; /* Espacio para el icono */
+  box-sizing: border-box; /* Incluir padding en el cálculo del ancho */
+  white-space: nowrap; /* Evitar que el texto se divida en varias líneas */
+  overflow: hidden; /* Evitar que el texto desborde */
+  text-overflow: ellipsis; /* Añadir puntos suspensivos cuando el texto sea muy largo */
+}
 
-     // Add markers for each city
-     cities.forEach(function (city) {
-       L.marker(city.coords)
-         .addTo(map)
-         .bindPopup('<b>' + city.name + '</b><br>Ventas: $' + city.sales.toLocaleString() + ' MXN');
-     });
+.search-bar .material-icons-outlined {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: gray;
+}
 
-     // Draw a simplified polygon outline of Mexico
-     var mexicoBorder = [
-       [32.7182, -117.1543], // Tijuana area
-       [29.0729, -110.9559], // Hermosillo area
-       [25.7785, -97.5000],  // Matamoros area
-       [21.1619, -86.8515],  // Cancun area
-       [16.7538, -93.1289],  // Chiapas area
-       [14.8971, -92.2767],  // Southern border
-       [16.8302, -99.9076],  // Acapulco area
-       [23.2494, -106.4111], // Mazatlan area
-       [31.3322, -113.3050], // Northern border
-       [32.7182, -117.1543]  // Back to Tijuana
-     ];
+.search-bar .search-icon {
+  left: 10px; /* Ajuste del icono a la izquierda */
+}
 
-     L.polygon(mexicoBorder, {
-       color: '#0d6efd',
-       fillColor: '#0d6efd',
-       fillOpacity: 0.1,
-       weight: 2
-     }).addTo(map);
+.search-bar .search-close {
+  right: 20px;
+  cursor: pointer;
+  display: none; /* Se oculta hasta que el usuario escriba */
+}
 
-     // Ensure proper sizing after map initialization
-     setTimeout(function () {
-       map.invalidateSize();
-     }, 100);
-   });
- </script>
+/* Asegurar que la barra sea visible en móviles */
+@media (max-width: 768px) {
+  .search-bar {
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  .search-bar .position-relative {
+    max-width: 100%;
+  }
+
+  .search-bar input {
+    font-size: 14px;
+  }
+}
+
+/* Ocultar el popup de búsqueda en móviles */
+.search-popup {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Ajustes para el icono de búsqueda en móviles */
+.mobile-search-btn {
+  display: flex;
+  align-items: center;
+}
+
+.mobile-search-btn i {
+  font-size: 20px;
+  cursor: pointer;
+}
+  </style>
+  
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <!-- Map initialization script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Initialize the map centered on Mexico
+      var map = L.map('style-map').setView([23.6345, -102.5528], 5);
+
+      // Add OpenStreetMap tiles
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(map);
+
+      // Add markers for major cities with sales data
+      var cities = [
+        { name: 'Ciudad de México', coords: [19.4326, -99.1332], sales: 15420 },
+        { name: 'Guadalajara', coords: [20.6597, -103.3496], sales: 8750 },
+        { name: 'Monterrey', coords: [25.6866, -100.3161], sales: 9320 },
+        { name: 'Puebla', coords: [19.0414, -98.2063], sales: 5680 },
+        { name: 'Tijuana', coords: [32.5149, -117.0382], sales: 4250 },
+        { name: 'Cancún', coords: [21.1619, -86.8515], sales: 7890 }
+      ];
+
+      // Add markers for each city
+      cities.forEach(function (city) {
+        L.marker(city.coords)
+          .addTo(map)
+          .bindPopup('<b>' + city.name + '</b><br>Ventas: $' + city.sales.toLocaleString() + ' MXN');
+      });
+
+      // Draw a simplified polygon outline of Mexico
+      var mexicoBorder = [
+        [32.7182, -117.1543], // Tijuana area
+        [29.0729, -110.9559], // Hermosillo area
+        [25.7785, -97.5000],  // Matamoros area
+        [21.1619, -86.8515],  // Cancun area
+        [16.7538, -93.1289],  // Chiapas area
+        [14.8971, -92.2767],  // Southern border
+        [16.8302, -99.9076],  // Acapulco area
+        [23.2494, -106.4111], // Mazatlan area
+        [31.3322, -113.3050], // Northern border
+        [32.7182, -117.1543]  // Back to Tijuana
+      ];
+
+      L.polygon(mexicoBorder, {
+        color: '#0d6efd',
+        fillColor: '#0d6efd',
+        fillOpacity: 0.1,
+        weight: 2
+      }).addTo(map);
+
+      // Ensure proper sizing after map initialization
+      setTimeout(function () {
+        map.invalidateSize();
+      }, 100);
+    });
+
+  </script>
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const searchInput = document.querySelector(".search-control");
+      const mobileSearchToggle = document.getElementById("mobileSearchToggle");
+
+      // Mostrar barra de búsqueda en móviles
+      if (mobileSearchToggle) {
+        mobileSearchToggle.addEventListener("click", function () {
+          searchInput.classList.toggle("d-none");
+        });
+      }
+
+      // Botón de cerrar búsqueda
+      document.querySelectorAll(".search-close, .mobile-search-close").forEach(btn => {
+        btn.addEventListener("click", function () {
+          searchInput.value = "";
+        });
+      });
+    });
+  </script>
 
 </body>
 

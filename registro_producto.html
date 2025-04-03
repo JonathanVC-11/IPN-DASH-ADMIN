@@ -42,30 +42,19 @@
       </div>
       <div class="search-bar flex-grow-1">
         <div class="position-relative">
-          <input class="form-control rounded-5 px-5 search-control d-lg-block d-none" type="text" placeholder="Buscar">
-          <span class="material-icons-outlined position-absolute d-lg-block d-none ms-3 translate-middle-y start-0 top-50">search</span>
-          <span class="material-icons-outlined position-absolute me-3 translate-middle-y end-0 top-50 search-close">close</span>
-          <!-- Modificamos el popup para que nunca se muestre -->
-          <div class="search-popup p-3" style="display: none !important; visibility: hidden !important; opacity: 0 !important; pointer-events: none !important;">
-            <div class="card rounded-4 overflow-hidden">
-              <div class="card-header d-lg-none">
-                <div class="position-relative">
-                  <input class="form-control rounded-5 px-5 mobile-search-control" type="text" placeholder="Buscar">
-                  <span class="material-icons-outlined position-absolute ms-3 translate-middle-y start-0 top-50">search</span>
-                  <span class="material-icons-outlined position-absolute me-3 translate-middle-y end-0 top-50 mobile-search-close">close</span>
-                </div>
-              </div>
-              <div class="card-body search-content">
-                <hr>
-              </div>
-            </div>
-          </div>
+          <input class="form-control rounded-5 px-5 search-control" type="text" placeholder="Buscar">
+          <span class="material-icons-outlined position-absolute search-icon start-0">search</span>
+          <span class="material-icons-outlined position-absolute search-close end-0">close</span>
         </div>
       </div>
+      <div class="search-popup p-3">
+
+        <div class="card-body search-content">
+        </div>
+      </div>
+      </div>
+      </div>
       <ul class="navbar-nav gap-1 nav-right-links align-items-center">
-        <li class="nav-item d-lg-none mobile-search-btn">
-          <a class="nav-link" href="javascript:;"><i class="material-icons-outlined">Buscar</i></a>
-        </li>
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative" data-bs-auto-close="outside"
@@ -604,210 +593,167 @@
   </footer>
   <!--top footer-->
 
-  <!--start cart-->
-  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCart">
-    <div class="offcanvas-header border-bottom h-70">
-      <h5 class="mb-0" id="offcanvasRightLabel">8 New Orders</h5>
-      <a href="javascript:;" class="primaery-menu-close" data-bs-dismiss="offcanvas">
-        <i class="material-icons-outlined">close</i>
-      </a>
-    </div>
-    <div class="offcanvas-body p-0">
-      <div class="order-list">
-        <div class="order-item d-flex align-items-center gap-3 p-3 border-bottom">
-          <div class="order-img">
-            <img src="assets/images/orders/01.png" class="img-fluid rounded-3" width="75" alt="">
-          </div>
-          <div class="order-info flex-grow-1">
-            <h5 class="mb-1 order-title">White Men Shoes</h5>
-            <p class="mb-0 order-price">$289</p>
-          </div>
-          <div class="d-flex">
-            <a class="order-delete"><span class="material-icons-outlined">delete</span></a>
-            <a class="order-delete"><span class="material-icons-outlined">visibility</span></a>
-          </div>
-        </div>
+  
 
-        <div class="order-item d-flex align-items-center gap-3 p-3 border-bottom">
-          <div class="order-img">
-            <img src="assets/images/orders/02.png" class="img-fluid rounded-3" width="75" alt="">
-          </div>
-          <div class="order-info flex-grow-1">
-            <h5 class="mb-1 order-title">Red Airpods</h5>
-            <p class="mb-0 order-price">$149</p>
-          </div>
-          <div class="d-flex">
-            <a class="order-delete"><span class="material-icons-outlined">delete</span></a>
-            <a class="order-delete"><span class="material-icons-outlined">visibility</span></a>
-          </div>
-        </div>
 
-        <div class="order-item d-flex align-items-center gap-3 p-3 border-bottom">
-          <div class="order-img">
-            <img src="assets/images/orders/03.png" class="img-fluid rounded-3" width="75" alt="">
-          </div>
-          <div class="order-info flex-grow-1">
-            <h5 class="mb-1 order-title">Men Polo Tshirt</h5>
-            <p class="mb-0 order-price">$139</p>
-          </div>
-          <div class="d-flex">
-            <a class="order-delete"><span class="material-icons-outlined">delete</span></a>
-            <a class="order-delete"><span class="material-icons-outlined">visibility</span></a>
-          </div>
-        </div>
+<!--start switcher-->
+<button class="btn btn-grd btn-grd-primary position-fixed bottom-0 end-0 m-3 d-flex align-items-center gap-2"
+type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop">
+<i class="material-icons-outlined">tune</i>Tema
+</button>
 
-        <div class="order-item d-flex align-items-center gap-3 p-3 border-bottom">
-          <div class="order-img">
-            <img src="assets/images/orders/04.png" class="img-fluid rounded-3" width="75" alt="">
-          </div>
-          <div class="order-info flex-grow-1">
-            <h5 class="mb-1 order-title">Blue Jeans Casual</h5>
-            <p class="mb-0 order-price">$485</p>
-          </div>
-          <div class="d-flex">
-            <a class="order-delete"><span class="material-icons-outlined">delete</span></a>
-            <a class="order-delete"><span class="material-icons-outlined">visibility</span></a>
-          </div>
-        </div>
-
-        <div class="order-item d-flex align-items-center gap-3 p-3 border-bottom">
-          <div class="order-img">
-            <img src="assets/images/orders/05.png" class="img-fluid rounded-3" width="75" alt="">
-          </div>
-          <div class="order-info flex-grow-1">
-            <h5 class="mb-1 order-title">Fancy Shirts</h5>
-            <p class="mb-0 order-price">$758</p>
-          </div>
-          <div class="d-flex">
-            <a class="order-delete"><span class="material-icons-outlined">delete</span></a>
-            <a class="order-delete"><span class="material-icons-outlined">visibility</span></a>
-          </div>
-        </div>
-
-        <div class="order-item d-flex align-items-center gap-3 p-3 border-bottom">
-          <div class="order-img">
-            <img src="assets/images/orders/06.png" class="img-fluid rounded-3" width="75" alt="">
-          </div>
-          <div class="order-info flex-grow-1">
-            <h5 class="mb-1 order-title">Home Sofa Set </h5>
-            <p class="mb-0 order-price">$546</p>
-          </div>
-          <div class="d-flex">
-            <a class="order-delete"><span class="material-icons-outlined">delete</span></a>
-            <a class="order-delete"><span class="material-icons-outlined">visibility</span></a>
-          </div>
-        </div>
-
-        <div class="order-item d-flex align-items-center gap-3 p-3 border-bottom">
-          <div class="order-img">
-            <img src="assets/images/orders/07.png" class="img-fluid rounded-3" width="75" alt="">
-          </div>
-          <div class="order-info flex-grow-1">
-            <h5 class="mb-1 order-title">Black iPhone</h5>
-            <p class="mb-0 order-price">$1049</p>
-          </div>
-          <div class="d-flex">
-            <a class="order-delete"><span class="material-icons-outlined">delete</span></a>
-            <a class="order-delete"><span class="material-icons-outlined">visibility</span></a>
-          </div>
-        </div>
-
-        <div class="order-item d-flex align-items-center gap-3 p-3 border-bottom">
-          <div class="order-img">
-            <img src="assets/images/orders/08.png" class="img-fluid rounded-3" width="75" alt="">
-          </div>
-          <div class="order-info flex-grow-1">
-            <h5 class="mb-1 order-title">Goldan Watch</h5>
-            <p class="mb-0 order-price">$689</p>
-          </div>
-          <div class="d-flex">
-            <a class="order-delete"><span class="material-icons-outlined">delete</span></a>
-            <a class="order-delete"><span class="material-icons-outlined">visibility</span></a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="offcanvas-footer h-70 p-3 border-top">
-      <div class="d-grid">
-        <button type="button" class="btn btn-grd btn-grd-primary" data-bs-dismiss="offcanvas">View Products</button>
-      </div>
-    </div>
+<div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="staticBackdrop">
+<div class="offcanvas-header border-bottom h-70">
+  <div class="">
+    <h5 class="mb-0">Temas de Ventanas</h5>
+    <p class="mb-0">Selecciona el tema de tu agrado</p>
   </div>
-  <!--end cart-->
+  <a href="javascript:;" class="primaery-menu-close" data-bs-dismiss="offcanvas">
+    <i class="material-icons-outlined">close</i>
+  </a>
+</div>
+<div class="offcanvas-body">
+  <div>
+    <p>Temas</p>
 
-
-  <!--start switcher-->
-  <button class="btn btn-grd btn-grd-primary position-fixed bottom-0 end-0 m-3 d-flex align-items-center gap-2"
-    type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop">
-    <i class="material-icons-outlined">tune</i>Customize
-  </button>
-
-  <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="staticBackdrop">
-    <div class="offcanvas-header border-bottom h-70">
-      <div class="">
-        <h5 class="mb-0">Theme Customizer</h5>
-        <p class="mb-0">Customize your theme</p>
+    <div class="row g-3">
+      <div class="col-12 col-xl-6">
+        <input type="radio" class="btn-check" name="theme-options" id="BlueTheme" checked>
+        <label
+          class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4"
+          for="BlueTheme">
+          <span class="material-icons-outlined">contactless</span>
+          <span>Azul</span>
+        </label>
       </div>
-      <a href="javascript:;" class="primaery-menu-close" data-bs-dismiss="offcanvas">
-        <i class="material-icons-outlined">close</i>
-      </a>
-    </div>
-    <div class="offcanvas-body">
-      <div>
-        <p>Theme variation</p>
-
-        <div class="row g-3">
-          <div class="col-12 col-xl-6">
-            <input type="radio" class="btn-check" name="theme-options" id="BlueTheme" checked>
-            <label
-              class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4"
-              for="BlueTheme">
-              <span class="material-icons-outlined">contactless</span>
-              <span>Blue</span>
-            </label>
-          </div>
-          <div class="col-12 col-xl-6">
-            <input type="radio" class="btn-check" name="theme-options" id="LightTheme">
-            <label
-              class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4"
-              for="LightTheme">
-              <span class="material-icons-outlined">light_mode</span>
-              <span>Light</span>
-            </label>
-          </div>
-          <div class="col-12 col-xl-6">
-            <input type="radio" class="btn-check" name="theme-options" id="DarkTheme">
-            <label
-              class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4"
-              for="DarkTheme">
-              <span class="material-icons-outlined">dark_mode</span>
-              <span>Dark</span>
-            </label>
-          </div>
-          <div class="col-12 col-xl-6">
-            <input type="radio" class="btn-check" name="theme-options" id="SemiDarkTheme">
-            <label
-              class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4"
-              for="SemiDarkTheme">
-              <span class="material-icons-outlined">contrast</span>
-              <span>Semi Dark</span>
-            </label>
-          </div>
-          <div class="col-12 col-xl-6">
-            <input type="radio" class="btn-check" name="theme-options" id="BoderedTheme">
-            <label
-              class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4"
-              for="BoderedTheme">
-              <span class="material-icons-outlined">border_style</span>
-              <span>Bordered</span>
-            </label>
-          </div>
-        </div><!--end row-->
-
+      <div class="col-12 col-xl-6">
+        <input type="radio" class="btn-check" name="theme-options" id="LightTheme">
+        <label
+          class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4"
+          for="LightTheme">
+          <span class="material-icons-outlined">light_mode</span>
+          <span>Claro</span>
+        </label>
       </div>
-    </div>
+      <div class="col-12 col-xl-6">
+        <input type="radio" class="btn-check" name="theme-options" id="DarkTheme">
+        <label
+          class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4"
+          for="DarkTheme">
+          <span class="material-icons-outlined">dark_mode</span>
+          <span>Oscuro</span>
+        </label>
+      </div>
+      <div class="col-12 col-xl-6">
+        <input type="radio" class="btn-check" name="theme-options" id="SemiDarkTheme">
+        <label
+          class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4"
+          for="SemiDarkTheme">
+          <span class="material-icons-outlined">contrast</span>
+          <span>Semi Oscuro</span>
+        </label>
+      </div>
+      <div class="col-12 col-xl-6">
+        <input type="radio" class="btn-check" name="theme-options" id="BoderedTheme">
+        <label
+          class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4"
+          for="BoderedTheme">
+          <span class="material-icons-outlined">border_style</span>
+          <span>Bordes</span>
+        </label>
+      </div>
+    </div><!--end row-->
+
   </div>
-  <!--start switcher-->
+</div>
+</div>
+<!--start switcher-->
+
+
+<style>
+  /* Ajuste para la barra de búsqueda */
+  .search-bar {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    word-wrap: break-word; /* Evitar que las palabras largas se corten */
+    overflow: hidden; /* Asegurar que el texto largo no se desborde */
+    width: 100%;
+  }
+  
+  .search-bar .position-relative {
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+  }
+  
+  .search-bar input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 30px;
+    padding-left: 40px; /* Espacio para el icono */
+    box-sizing: border-box; /* Incluir padding en el cálculo del ancho */
+    white-space: nowrap; /* Evitar que el texto se divida en varias líneas */
+    overflow: hidden; /* Evitar que el texto desborde */
+    text-overflow: ellipsis; /* Añadir puntos suspensivos cuando el texto sea muy largo */
+  }
+  
+  .search-bar .material-icons-outlined {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: gray;
+  }
+  
+  .search-bar .search-icon {
+    left: 10px; /* Ajuste del icono a la izquierda */
+  }
+  
+  .search-bar .search-close {
+    right: 20px;
+    cursor: pointer;
+    display: none; /* Se oculta hasta que el usuario escriba */
+  }
+  
+  /* Asegurar que la barra sea visible en móviles */
+  @media (max-width: 768px) {
+    .search-bar {
+      width: 100%;
+      padding: 0 15px;
+    }
+  
+    .search-bar .position-relative {
+      max-width: 100%;
+    }
+  
+    .search-bar input {
+      font-size: 14px;
+    }
+  }
+  
+  /* Ocultar el popup de búsqueda en móviles */
+  .search-popup {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+  
+  /* Ajustes para el icono de búsqueda en móviles */
+  .mobile-search-btn {
+    display: flex;
+    align-items: center;
+  }
+  
+  .mobile-search-btn i {
+    font-size: 20px;
+    cursor: pointer;
+  }
+    </style>
+
 
   <!--bootstrap js-->
   <script src="assets/js/bootstrap.bundle.min.js"></script>
@@ -833,6 +779,28 @@
   <script src="assets/js/main.js"></script>
 
 
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const searchInput = document.querySelector(".search-control");
+      const mobileSearchToggle = document.getElementById("mobileSearchToggle");
+
+      // Mostrar barra de búsqueda en móviles
+      if (mobileSearchToggle) {
+        mobileSearchToggle.addEventListener("click", function () {
+          searchInput.classList.toggle("d-none");
+        });
+      }
+
+      // Botón de cerrar búsqueda
+      document.querySelectorAll(".search-close, .mobile-search-close").forEach(btn => {
+        btn.addEventListener("click", function () {
+          searchInput.value = "";
+        });
+      });
+    });
+  </script>
+  
 </body>
 
 </html>
